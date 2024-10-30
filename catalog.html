@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Каталог</title>
+</head>
+<body class="body-inner">
+    <header class="page-header">
+
+        <nav class="navigation">
+            <a class="navigation-logo" href="index.html">
+                <img class="page-header-logo" src="/images/logo/logo-short-dark.svg" alt="Логотип Барбешоп «Бородинский»">
+            </a>
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a href="about.html" class="navigation-link">О нас</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="catalog.html" class="navigation-link navigation-link-current">Каталог</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="faq.html" class="navigation-link">Частые вопросы</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="navigation-list navigation-user">
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">
+                        <span class="visually-hidden">Поиск</span>
+                    </a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">
+                        <span class="visually-hidden">Корзина</span>
+                    </a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">Вход</a>
+                </li>
+            </ul> -->
+            <ul class="navigation-list navigation-user">
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">
+                        <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11 6.5a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm-.665 5.249a6.5 6.5 0 111.414-1.414l3.958 3.958-1.414 1.414-3.958-3.958z" />
+                        </svg>
+                        <span class="visually-hidden">Поиск</span>
+                    </a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">
+                        <svg class="navigation-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
+                            <g clip-path="url(#a)">
+                            <path  fill-rule="evenodd" d="M3.1 6 3.57.9l.08-.9h8.67l.1.9.48 5.1h2.73l-.14 1.12-1 8-.1.88H1.61l-.11-.88-1-8L.37 6H3.1Zm2 0h5.8l-.38-4H5.48L5.1 6Zm-1.72 8-.75-6h10.74l-.75 6H3.38ZM8.5 9.5v3h2v-3h-2Zm-3 3v-3h2v3h-2Z" clip-rule="evenodd"/>
+                            </g>
+                            <defs>
+                            <clipPath id="a">
+                                <path fill="#fff" d="M0 0h16v16H0z"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <span class="visually-hidden">Корзина</span>
+                    </a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link navigation-link-login login">
+                        <svg class="navigation-icon aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8ZM8 10C4.68629 10 2 12.6863 2 16H14C14 12.6863 11.3137 10 8 10Z"/>
+                        </svg>
+
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="main-inner">
+        <header class="inner-header">
+            <h1 class="inner-header-title">Каталог</h1>
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs-item">
+                    <a href="index.html" class="breadcrumbs-link">Главная</a>
+                </li>
+                <li class="breadcrumbs-item">
+                    <a class="breadcrumbs-link disabled-link">Каталог</a> <!-- Если не добавлять атрибут href, то тег а работает как span -->
+                </li>
+            </ul>
+        </header>
+
+
+        <section class="catalog-products">
+            <h2 class="visually-hidden" hidden>Список товаров с фильтрами</h2>
+
+            <form class="catalog-filter" action="https://echo.htmlacademy.ru/">
+                <!-- Field — поле (как в форме, где пользователь вводит данные).
+                    Set — набор, группа. -->
+                <fieldset class="catalog-filter-group">
+                    <legend class="catalog-filter-title">Цена</legend>
+
+                    <div class="range">
+                        <div class="range-scale">
+                            <div class="range-bar" style="left: 60px; width: 136px;">
+                                <button class="range-toggle toggle-min" type="button">
+                                    <span class="visually-hidden">
+                                        Изменить минимальную цену
+                                    </span>
+                                </button> <!-- toggle - переключатель-->
+                                <button class="range-toggle toggle-max" type="button">
+                                    <span class="visually-hidden">
+                                        Изменить максимальную цену
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="range-wrapper-inputs">
+                            <label class="catalog-filter-input">от <input class="range-input" value="50" type="number" name="min-price"> ₽</label>
+                            <label class="catalog-filter-input">до <input class="range-input" value="1500" type="number" name="max-price"> ₽</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="catalog-filter-group">
+                    <legend class="catalog-filter-title">Производители</legend>
+
+                    <ul class="catalog-filter-list">
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="checkbox" name="bed-head-for-men" checked>
+                                <!-- Первый span для checkbox -->
+                                <span class="control-mark"></span>
+                                <!-- Второй обрамляет описание -->
+                                <span class="control-label">Bed Head for Men</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="checkbox" name="homme-deep-cleansing-cool">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Homme Deep Cleansing Cool</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="checkbox" name="so-intense">
+                                <span class="control-mark"></span>
+                                <span class="control-label">So Intense</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="checkbox" name="sprekenhus">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Sprekenhus</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="checkbox" name="firm-store">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Firm Storе</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="checkbox" name="winter-body">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Winter Body</span>
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset class="catalog-filter-group">
+                    <legend class="catalog-filter-title">Группы товаров</legend>
+                    <ul class="catalog-filter-list">
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <!-- У радио кнопок name должен быть одинаковый -->
+                                <input class="visually-hidden control-input" type="radio" name="product-group" value="shaving-supplies">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Бритвенные принадлежности</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="radio" name="product-group" value="care-production">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Средства для ухода</span>
+                            </label>
+                        </li>
+
+                        <li class="catalog-filter-item">
+                            <label class="control">
+                                <input class="visually-hidden control-input" type="radio" name="product-group" value="accessories">
+                                <span class="control-mark"></span>
+                                <span class="control-label">Аксессуары</span>
+                            </label>
+                        </li>
+                    </ul>
+                    </ul>
+                </fieldset>
+
+                <button class="button" type="submit">Показать</button>
+            </form>
+
+
+            <div class="catalog-right-column">
+                <div class="sorting-container">
+                    <form class="sorting-type">
+                        <label class="visually-hidden" for="sorting">Сортировка</label>
+                        <select class="select-control" name="sorting" id="sorting">
+                            <option value="popular">Сначала популярное</option>
+                            <option value="cheap">Сначала дешёвое</option>
+                            <option value="expensive">Сначала дорогое</option>
+                        </select>
+                        <button class="visually-hidden" type="submit">Отсортировать продукты</button>
+                    </form>
+
+                    <a href="#" class="card-grid-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g clip-path="url(#clip0_155685_518)">
+                                <path clip-rule="evenodd" d="M2 0C0.895431 0 0 0.895431 0 2C0 3.10457 0.895431 4 2 4C3.10457 4 4 3.10457 4 2C4 0.895431 3.10457 0 2 0ZM2 6C0.895431 6 0 6.89543 0 8C0 9.10457 0.895431 10 2 10C3.10457 10 4 9.10457 4 8C4 6.89543 3.10457 6 2 6ZM0 14C0 12.8954 0.895431 12 2 12C3.10457 12 4 12.8954 4 14C4 15.1046 3.10457 16 2 16C0.895431 16 0 15.1046 0 14ZM7 1C6.44772 1 6 1.44772 6 2C6 2.55228 6.44772 3 7 3H15C15.5523 3 16 2.55228 16 2C16 1.44772 15.5523 1 15 1H7ZM6 8C6 7.44772 6.44772 7 7 7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H7C6.44772 9 6 8.55228 6 8ZM7 13C6.44772 13 6 13.4477 6 14C6 14.5523 6.44772 15 7 15H15C15.5523 15 16 14.5523 16 14C16 13.4477 15.5523 13 15 13H7Z"/>
+                            </g>
+                            <defs>
+                                <pattern id="pattern0_155685_518" patternContentUnits="objectBoundingBox" width="5" height="5">
+                                    <use xlink:href="#image0_155685_518" transform="scale(0.0625)"/>
+                                </pattern>
+                                <clipPath id="clip0_155685_518">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                                <image id="image0_155685_518" width="80" height="80" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>
+                        <span class="visually-hidden">Показать список</span>
+                    </a>
+                    <a href="#" class="card-grid-toggle card-grid-toggle-current">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_155685_1004)">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2ZM6 2C6 0.895431 6.89543 0 8 0C9.10457 0 10 0.895431 10 2C10 3.10457 9.10457 4 8 4C6.89543 4 6 3.10457 6 2ZM16 2C16 0.895431 15.1046 0 14 0C12.8954 0 12 0.895431 12 2C12 3.10457 12.8954 4 14 4C15.1046 4 16 3.10457 16 2ZM0 8C0 6.89543 0.895431 6 2 6C3.10457 6 4 6.89543 4 8C4 9.10457 3.10457 10 2 10C0.895431 10 0 9.10457 0 8ZM10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10C9.10457 10 10 9.10457 10 8ZM12 8C12 6.89543 12.8954 6 14 6C15.1046 6 16 6.89543 16 8C16 9.10457 15.1046 10 14 10C12.8954 10 12 9.10457 12 8ZM4 14C4 12.8954 3.10457 12 2 12C0.895431 12 0 12.8954 0 14C0 15.1046 0.895431 16 2 16C3.10457 16 4 15.1046 4 14ZM6 14C6 12.8954 6.89543 12 8 12C9.10457 12 10 12.8954 10 14C10 15.1046 9.10457 16 8 16C6.89543 16 6 15.1046 6 14ZM16 14C16 12.8954 15.1046 12 14 12C12.8954 12 12 12.8954 12 14C12 15.1046 12.8954 16 14 16C15.1046 16 16 15.1046 16 14Z"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_155685_1004">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <span class="visually-hidden">Показать карточки</span>
+                    </a>
+                </div>
+
+                    <div class="catalog-right-column">
+                        <ul class="product-list">
+                            <li class="product-card">
+                                <a href="product.html" class="product-card-image-link">
+                                    <img src="/images/catalog/Catalog-1.jpg" alt="Товар из ассортимента шампуней" class="product-card-image">
+                                </a>
+                                <a class="product-card-title-link"  href="#">
+                                    <h3 class="product-card-title">Шампунь для мужчин Brews Daily</h3>
+                                </a>
+                                <b class="product-card-price">744 ₽</b>
+                                <a href="#" class="product-card-button button">Купить</a>
+                            </li>
+                            <li class="product-card">
+                                <a href="product.html" class="product-card-image-link">
+                                    <img src="/images/catalog/Catalog-2.jpg" alt="Товар из ассортимента шампуней" class="product-card-image">
+                                </a>
+                                <a class="product-card-title-link">
+                                    <h3 class="product-card-title">Syoss шампунь Men Power & Strength</h3>
+                                </a>
+                                <b class="product-card-price">160 ₽</b>
+                                <a href="#" class="product-card-button button">Купить</a>
+                            </li>
+
+                            <li class="product-card">
+                                <a href="product.html" class="product-card-image-link">
+                                    <img src="/images/catalog/Catalog-3.jpg" alt="Товар из ассортимента шампуней" class="product-card-image">
+                                </a>
+                                <a class="product-card-title-link">
+                                    <h3 class="product-card-title">Schauma шампунь для мужчин «Сила и объём с хмелем»</h3>
+                                </a>
+                                <b class="product-card-price">94 ₽</b>
+                                <a href="#" class="product-card-button button">Купить</a>
+                            </li>
+
+                            <li class="product-card">
+                                <a href="product.html" class="product-card-image-link">
+                                    <img src="/images/catalog/Catalog-4.jpg" alt="Товар из ассортимента шампуней" class="product-card-image">
+                                </a>
+                                <a class="product-card-title-link">
+                                    <h3 class="product-card-title">Nivea Men шампунь-уход  «Экстремальная свежесть с ментолом»</h3>
+                                </a>
+                                <b class="product-card-price">173 ₽</b>
+                                <a href="#" class="product-card-button button">Купить</a>
+                            </li>
+
+                            <li class="product-card">
+                                <a href="product.html" class="product-card-image-link">
+                                    <img src="/images/catalog/Catalog-5.jpg" alt="Товар из ассортимента шампуней" class="product-card-image">
+                                </a>
+                                <a class="product-card-title-link">
+                                    <h3 class="product-card-title">Шампунь Amplifier Thickening</h3>
+                                </a>
+                                <b class="product-card-price">441 ₽</b>
+                                <a href="#" class="product-card-button button">Купить</a>
+                            </li>
+
+                            <li class="product-card">
+                                <a href="product.html" class="product-card-image-link">
+                                    <img src="/images/catalog/Catalog-6.jpg" alt="Товар из ассортимента шампуней" class="product-card-image">
+                                </a>
+                                <a class="product-card-title-link">
+                                    <h3 class="product-card-title">American Crew шампунь Anti-Dandruff</h3>
+                                </a>
+                                <b class="product-card-price">904 ₽</b>
+                                <a href="#" class="product-card-button button">Купить</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="pagination-container">
+                        <ul class="pagination">
+                            <li class="pagination-item">
+                                <a class="pagination-link pagination-prev pagination-disabled">
+                                    <span class="visually-hidden">Предыдущая страница</span>
+                                </a>
+                            </li>
+                            <li class="pagination-item">
+                                <a class="pagination-link pagination-current">1</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a class="pagination-link" href="#">2</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a class="pagination-link" href="#">3</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a class="pagination-link" href="#">4</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a class="pagination-link" href="#">5</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a class="pagination-link pagination-next" href="#">
+                                    <span class="visually-hidden">Следующая страница</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="button pagination-show-more" type="button">Показать ещё</button>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="page-footer">
+        <div class="page-footer-container">
+            <!-- Как найти -->
+            <section class="footer-contacts">
+                <h2 class="visually-hidden">Контакты</h2>
+                <img class="footer-contacts-logo" src="images/logo/logo-short-footer.svg" alt="Логотип Барбершоп «Бородинский»">
+                <address class="footer-contacts-address">
+                    <p class="footer-about-text">Санкт-Петеребург, набережная реки Карповки, 5, литера П.</p>
+                    <a class="footer-contacts-address-phone" href="tel:88005558628">+7 800 555-86-28</a>
+                </address>
+                <a class="footer-contacts-map-link" href="https://www.google.com/maps/place/%D0%BD%D0%B0%D0%B1.+P%D0%B5%D0%BA%D0%B8+%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%BA%D0%B8,+5+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81+%D0%9F,+%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3,+197022/@59.9683447,30.3151923,17z/data=!3m1!4b1!4m5!3m4!
+                1s0x4696315bc4e8ce61:0x74d4f0cbfe1fd995!8m2!3d59.968342!4d30.317381">Как нас найти</a>
+            </section>
+
+            <!-- Контакты -->
+            <section class="newsletter">
+                <h2 class="page-footer-title">Получайте лучшие предложения</h2>
+                <form class="newsletter-email" action="http://echo.htmlacademy.ru" method="post">
+                    <p class="newsletter-email">
+                        <label class="visually-hidden" for="newsletter-email">Email</label>
+                        <input class="field" placeholder="email@htmlacademy.ru" name="newsletter-email" id="newsletter-email"  type="email" required>
+                        <button class="button newsletter-button" type="submit">
+                            <span class="visually-hidden">Отправить</span>
+                        </button>
+                    </p>
+
+                </form>
+            </section>
+
+        <!-- Социальные сети -->
+            <section class="footer-social">
+                <h2 class="page-footer-title">Давайте дружить</h2>
+                <ul class="footer-social-list">
+                    <li class="footer-social-item">
+                        <a class="footer-social-link footer-social-link-tw" href="https://twitter.com/htmlacademy_ru" target="_blank" rel="noopener noreferrer">
+                            <span class="visually-hidden">Твиттер</span>
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a class="footer-social-link footer-social-link-vk" href="https://vk.com/htmlacademy" target="_blank" rel="noopener noreferrer">
+                            <span class="visually-hidden">Вконтакте</span>
+                        </a>
+                    </li>
+                    <li class="footer-social-item">
+                        <a class="footer-social-link footer-social-link-inst" href="https://www.facebook.com/htmlacademy" target="_blank" rel="noopener noreferrer">
+                            <span class="visually-hidden">Инстаграм</span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.htmlacademy.ru</a></p>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
